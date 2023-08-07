@@ -1,0 +1,10 @@
+{
+  "resourceName": "teeTimes",
+  "tableName": "teeTimes",
+  "partitionKey": {
+    "fieldName": "bookings",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

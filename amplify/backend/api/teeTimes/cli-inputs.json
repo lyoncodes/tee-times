@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/booking": {
+      "name": "/booking",
+      "lambdaFunction": "teetimesc6d4e119",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/bookings/{bookingId}": {
+      "name": "/bookings/{bookingId}",
+      "lambdaFunction": "teeTimeHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/teeTime/{teeTimeId}": {
+      "name": "/teeTime/{teeTimeId}",
+      "lambdaFunction": "teeTimeHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/teeTimes": {
+      "name": "/teeTimes",
+      "lambdaFunction": "teeTimeHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

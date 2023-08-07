@@ -1,0 +1,92 @@
+{
+  "api": {
+    "teeTimes": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "teetimesc6d4e119"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "teeTimeHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "teeTimeHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "teetimesc6d4e119": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "teeTimes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_teeTimeHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "teeTimeHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_teeTimeHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "teeTimeHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_teetimesc6d4e119_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "teetimesc6d4e119"
+        }
+      ]
+    },
+    "AMPLIFY_function_teetimesc6d4e119_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "teetimesc6d4e119"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "teeTimes": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
